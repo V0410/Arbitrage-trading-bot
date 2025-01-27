@@ -36,18 +36,6 @@ import bs58 from "bs58";
     const mintPubkey = new PublicKey(
         "CQY7aJx5BwfP3GmVNCek5WPtUnjbsfZw7m4PL8XwpS7j",
     );
-
-    // authority type
-
-    // 1) for mint account
-    // AuthorityType.MintTokens
-    // AuthorityType.FreezeAccount
-
-    // 2) for token account
-    // AuthorityType.AccountOwner
-    // AuthorityType.CloseAccount
-
-    // 1) use build-in function
     {
         let txhash = await setAuthority(
             connection, // connection
@@ -59,10 +47,6 @@ import bs58 from "bs58";
         );
         console.log(`txhash: ${txhash}`);
     }
-
-    // or
-
-    // 2) compose by yourself
     {
         let tx = new Transaction().add(
             createSetAuthorityInstruction(

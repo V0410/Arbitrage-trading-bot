@@ -1,27 +1,7 @@
-import { wrappedSolTokenAddress } from "./config.js";
 import { meteoraSwap } from "./util/meteoraSwap.js";
 import { orcaSwap } from "./util/orcaSwap.js";
 import { raydiumClmmSwap } from "./util/raydiumClmmSwap.js";
 import { raydiumSwap } from "./util/raydiumSwap.js";
-// export const buyToken = async(poolData, amount) => {
-//     if (poolData.base.address === wrappedSolTokenAddress) {
-//         const poolAddress = poolData.address;
-//         const quoteDecimal = poolData.quote.decimal;
-//         const tokenAddress = poolData.tokenAddress;
-//         const dex = poolData.dex;
-//         if (dex == "raydium") return await raydiumSwap(poolAddress, amount, true, quoteDecimal);
-//         else if (dex == "orca") return await orcaSwap(poolAddress, amount, true, quoteDecimal, tokenAddress);
-//         else if (dex == "meteora") return await meteoraSwap(poolAddress, amount, true, quoteDecimal);
-//     } else {
-//         const poolAddress = poolData.address;
-//         const baseDecimal = poolData.base.decimal;
-//         const tokenAddress = poolData.tokenAddress;
-//         const dex = poolData.dex;
-//         if (dex == "raydium") return await raydiumSwap(poolAddress, amount, true, baseDecimal);
-//         else if (dex == "orca") return await orcaSwap(poolAddress, amount, true, baseDecimal, tokenAddress);
-//         else if (dex == "meteora") return await meteoraSwap(poolAddress, amount, true, baseDecimal);
-//     }
-// }
 
 export const buyToken = async(poolData, amount, highestPoolData) => {
     const poolAddress = poolData.address;
