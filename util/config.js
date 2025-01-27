@@ -9,10 +9,7 @@ import bs58 from "bs58";
 import { wallet, connection } from "../config.js";
 
 export const owner = wallet;
-// export const connection = new Connection("<YOUR_RPC_URL>"); //<YOUR_RPC_URL>
-// export const connection = connection; //<YOUR_RPC_URL>
-export const txVersion = TxVersion.V0; // or TxVersion.LEGACY
-// const cluster = "mainnet"; // 'mainnet' | 'devnet'
+export const txVersion = TxVersion.V0; 
 const cluster = "mainnet"; // 'mainnet' | 'devnet'
 
 let raydium;
@@ -27,24 +24,7 @@ export const initSdk = async (params) => {
         disableFeatureCheck: true,
         disableLoadToken: !params?.loadToken,
         blockhashCommitment: "finalized",
-        // urlConfigs: {
-        //   BASE_HOST: '<API_HOST>', // api url configs, currently api doesn't support devnet
-        // },
     });
-
-    /**
-     * By default: sdk will automatically fetch token account data when need it or any sol balace changed.
-     * if you want to handle token account by yourself, set token account data after init sdk
-     * code below shows how to do it.
-     * note: after call raydium.account.updateTokenAccount, raydium will not automatically fetch token account
-     */
-
-    /*  
-    raydium.account.updateTokenAccount(await fetchTokenAccountData())
-    connection.onAccountChange(owner.publicKey, async () => {
-      raydium!.account.updateTokenAccount(await fetchTokenAccountData())
-    })
-    */
 
     return raydium;
 };

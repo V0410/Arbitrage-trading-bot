@@ -43,7 +43,6 @@ export const meteoraDlmmSwap = async(poolAddress, amount, isBuy, baseTokenAddres
 
     // Swap quote
     const binArrays = await dlmmPool.getBinArrayForSwap(swapYtoX);
-    // console.log("Amount ===>", swapAmount, "swapYtoX ===>", swapYtoX, "Slippage ===>", SLIPPAGE, "binArrays ===>", binArrays);
 
     const swapQuote = await dlmmPool.swapQuote(swapAmount, swapYtoX, new BN(SLIPPAGE), binArrays);
 

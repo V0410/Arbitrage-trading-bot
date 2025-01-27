@@ -19,8 +19,6 @@ export const raydiumSwap = async(pairing, amount, isBuy, baseTokenAddress, baseT
         var amountIn
             // // Fetch token accounts for the user
         const tokenAccounts = await getTokenAccountsByOwner(connection, owner);
-        // if (!tokenAccounts || tokenAccounts.length === 0) {
-        //     throw new Error("No token accounts found for the owner");
         // }
 
         // Fetch pool keys and info
@@ -29,18 +27,6 @@ export const raydiumSwap = async(pairing, amount, isBuy, baseTokenAddress, baseT
 
         // Determine input/output tokens based on the side
         let coinIn, coinOut, coinInDecimal, coinOutDecimal;
-        // if (!isBuy) {
-        //     coinIn = poolKeys.quoteMint;
-        //     coinInDecimal = quoteTokenDecimal;
-        //     coinOut = poolKeys.baseMint;
-        //     coinOutDecimal = baseTokenDecimal;
-        // } else {
-        //     coinIn = poolKeys.baseMint;
-        //     coinInDecimal = baseTokenDecimal;
-        //     coinOut = poolKeys.quoteMint;
-        //     coinOutDecimal = quoteTokenDecimal;
-        // }
-
         if (baseTokenAddress === Token.WSOL.mint.toBase58()) {
             if (isBuy) {
                 coinIn = baseTokenAddress;

@@ -82,23 +82,11 @@ export const orcaSwap = async(poolAddress, amount, isBuy, baseTokenAddress, base
         IGNORE_CACHE,
     );
 
-    // console.log("estimatedAmountIn:", DecimalUtil.fromBN(quote.estimatedAmountIn, TokenA.decimals).toString(), "TokenA");
-    // console.log("estimatedAmountOut:", DecimalUtil.fromBN(quote.estimatedAmountOut, TokenB.decimals).toString(), "Token");
-    // console.log("otherAmountThreshold:", DecimalUtil.fromBN(quote.otherAmountThreshold, TokenB.decimals).toString(), "Token");
-
     // Send the transaction
     const tx = await whirlpool.swap(quote, wallet.publicKey);
     const result = await tx.build()
     const txs = result.transaction
     txs.sign([wallet]);
-    // console.log("TOKWPOAJDPOSROPUOJH ====>", vt);
-
-    // const rawTransaction = vt.serialize();
-
-    // const rawTransaction = txs.serialize();
-    // const signature = await connection.sendRawTransaction(rawTransaction);
-    // await connection.confirmTransaction(signature, 'confirmed');
-
     const resultTx = base58.encode(txs.serialize())
     const jitoTx = await createTipTransaction(wallet, connection);
     const tipTx = convertBase64ToBase58(jitoTx.serialize().toString('base64'));
@@ -120,5 +108,3 @@ export const orcaSwap = async(poolAddress, amount, isBuy, baseTokenAddress, base
         amountOut: Number(quote.estimatedAmountOut) / (10 ** TokenB.decimals)
     };
 }
-
-// orcaSwap(connection, "Hxw77h9fEx598afiiZunwHaX3vYu9UskDk9EpPNZp1mG", "orcaEKTdK7LKz57vaAYr9QeNsVEPfiu6QeMU1kektZE", 6, 5, true)

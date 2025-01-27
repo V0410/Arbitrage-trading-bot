@@ -57,17 +57,12 @@ export const meteoraSwap = async(poolAddress, amount, isBuy, baseTokenAddress, b
             return await meteoraDlmmSwap(poolAddress, amount, isBuy, baseTokenAddress, baseTokenDecimal, quoteTokenAddress, quoteTokenDecimal)
         }
         const pool = await AmmImpl.default.create(provider.connection, poolAddr);
-        // let inTokenMint = swapAtoB ? poolState.tokenAMint : poolState.tokenBMint;
-        // console.log("inTokenMint ===>", inTokenMint, "swapAmount ===>", swapAmount, "SLIPPAGE ===>", SLIPPAGE);
-
         let swapQuote = await pool.getSwapQuote(inTokenMint, swapAmount, SLIPPAGE);
 
         const swapToken = await pool.swap(mockWallet.publicKey, inTokenMint, swapQuote.swapInAmount, swapQuote.swapOutAmount)
 
         await swapToken.sign(wallet)
 
-        // const signature = await mainnetConnection.sendTransaction(swapToken, [wallet]);
-        // await mainnetConnection.confirmTransaction(signature, 'confirmed');
 
         const resultTx = base58.encode(swapToken.serialize());
         const jitoTx = await createTipTransaction(wallet, connection);
@@ -91,5 +86,3 @@ export const meteoraSwap = async(poolAddress, amount, isBuy, baseTokenAddress, b
         return console.log("Not AMM POOL!", err);
     }
 }
-
-// meteoraSwap(new PublicKey("6AJcP7wuLwmRYLBNbi825wgguaPsWzPBEHcHndpRpump"), new BN(10000000000), true)
