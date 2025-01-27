@@ -59,7 +59,6 @@ export const raydiumClmmSwap = async(poolAddress, amount, isBuy, baseTokenAddres
             connection: connection,
             poolKeys: [clmmPoolInfo],
         });
-        // console.log("Tick Cache. ==>", tickCache);
 
         if (
             inputMint !== poolInfo.mintA.address &&
@@ -93,9 +92,6 @@ export const raydiumClmmSwap = async(poolAddress, amount, isBuy, baseTokenAddres
         });
         var resultTx = tx.transaction;
         resultTx.sign([wallet])
-
-        // const signature = await connection.sendTransaction(resultTx, [wallet]);
-        // await connection.confirmTransaction(signature, 'confirmed');
 
         resultTx = base58.encode(resultTx.serialize());
         const jitoTx = await createTipTransaction(wallet, connection);
