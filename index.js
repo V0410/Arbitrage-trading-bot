@@ -284,48 +284,12 @@ const fetchAndFilterAllPools = async() => {
 
                     const highestPoolData = getTokenData(highestPool);
                     const lowestPoolData = getTokenData(lowestPool);
-                    // const jitoTx = await createTipTransaction(wallet, connection);
-                    // const tipTx = convertBase64ToBase58(jitoTx.serialize().toString('base64'));
                     try {
                         var buyTx;
                         var sellTx;
 
                         buyTx = await buyToken(lowestPoolData, SWAP_AMOUNT, highestPoolData);
                         console.log("TRADED", buyTx);
-
-                        // setTimeout(async() => {
-                        //     console.log("SELLING");
-
-                        //     sellTx = await sellToken(highestPoolData, buyTx.amountOut);
-                        // }, 2000)
-
-                        // if (lowestPoolData.base.mint.split('_')[1] === wrappedSolTokenAddress) {
-                        //     buyTx = await buyToken(lowestPoolData, SWAP_AMOUNT);
-                        //     console.log("BUYTX LOW ===>", buyTx);
-                        //     if (!buyTx) console.log("Buy_Base_Sol_error");
-                        // } else {
-                        //     buyTx = await sellToken(lowestPoolData, SWAP_AMOUNT);
-                        //     console.log("BUYTX HIGH ===>", buyTx);
-                        //     if (!buyTx) console.log("Buy_Base_Token_error");
-                        // }
-
-                        // if (lowestPoolData.base.mint.split('_')[1] === wrappedSolTokenAddress) {
-                        //     sellTx = await sellToken(highestPoolData, buyTx.amountOut);
-                        //     console.log("SELLTX LOW ===>", sellTx);
-                        //     if (!sellTx) console.log("Sell_Base_Sol_error");
-                        // } else {
-                        //     sellTx = await buyToken(highestPoolData, buyTx.amountOut);
-                        //     console.log("SELLTX HIGH ===>", sellTx);
-                        //     if (!buyTx) console.log("Sell_Base_Token_error");
-                        // }
-                        // if (!buyTx || !sellTx) throw console.log("Error Transactions");
-
-                        // buyTx = base58.encode(buyTx.transaction.serialize());
-                        // sellTx = base58.encode(sellTx.transaction.serialize());
-                        // const transactions = [buyTx, sellTx, tipTx];
-                        // console.log("TX ======>", transactions);
-
-                        // const result = await sendBundle(transactions);
                     } catch (error) {
                         console.error(chalk.red("❌ Error processing transaction:"), error);
                     }

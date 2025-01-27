@@ -1,8 +1,7 @@
-import { ComputeBudgetProgram, PublicKey } from "@solana/web3.js";
+import { PublicKey } from "@solana/web3.js";
 import { connection, SLIPPAGE, wallet } from "../config.js";
 import BN from "bn.js";
 import DLMM from "@meteora-ag/dlmm";
-import { Wallet } from "@project-serum/anchor";
 import { convertBase64ToBase58, createTipTransaction, sendBundle } from "../jito.js";
 import base58 from "bs58";
 import { getTokenBalance } from './getTokenBalance.js'
@@ -102,9 +101,6 @@ export const meteoraDlmmSwap = async(poolAddress, amount, isBuy, baseTokenAddres
 
     await swapTx.sign(wallet);
 
-    // const signature = await connection.sendTransaction(swapTx, [wallet]);
-    // await connection.confirmTransaction(signature, 'confirmed');
-
     const resultTx = base58.encode(swapTx.serialize())
     const jitoTx = await createTipTransaction(wallet, connection);
     const tipTx = convertBase64ToBase58(jitoTx.serialize().toString('base64'));
@@ -118,9 +114,5 @@ export const meteoraDlmmSwap = async(poolAddress, amount, isBuy, baseTokenAddres
             if (balance >= Number(swapQuote.minOutAmount) / 2) break;
         }
     }
-
-    // console.log("ilfdhuioawhyfuieydufioyusi ======>", swapTx);
-    //https://solana.com/developers/cookbook/transactions/add-priority-fees
-    // set the desired priority fee
     return { transaction: swapTx, amountOut: Number(swapQuote.minOutAmount) }
 }
