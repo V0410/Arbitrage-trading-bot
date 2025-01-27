@@ -1,0 +1,44 @@
+[
+  {
+    "token": "3WPep4ufaToK1aS5s8BL9inzeUrt4DYaQCiic6ZkkC1U",
+    "highestPool": "solana_7B12MDALsnmgLeqxGfJDeLUuPvkekHNyA9rvXEgnQ7bj",
+    "lowestPool": "solana_BtcZXMqMyTLRUrp9atgMuBKt5hPr92KvpPMT3SHENvev",
+    "solNeededForProfit": 0.0023885844785651042
+  },
+  {
+    "token": "b1nkm6skdrwXoMku8CVx8Fk4LfC2jAqxV3m9VDNjYqz",
+    "highestPool": "solana_CgS5ut3hLHnEY2LN4N2KtzFq73DujoFEteTkYiFsGCcy",
+    "lowestPool": "solana_FBncvccaKFa9bN8ipKzEaMaDTyNbeqTEEaTHWAtK49U",
+    "solNeededForProfit": 0.002362720286171704
+  },
+  {
+    "token": "ECY31gWwxy4s2VnMkYhmqDkrV75KrwR2yTtsnrnSpump",
+    "highestPool": "solana_G49cYxMF7AtWziBgzcAiJSEMG5WAa2sExacpXEeyEnen",
+    "lowestPool": "solana_BBZ6XB7FdG8uq7CqtbejFkR7V8ozCoQHFW4sEKmhAFX2",
+    "solNeededForProfit": 0.0028259839820804706
+  },
+  {
+    "token": "5GfXzzdxUZ4QEwwa5hhBMEazFSp9EhtYvm8RFLxrgyVc",
+    "highestPool": "solana_EEpm1vqdA4kmJsGifcri7wdStHHnNjDFaDUgpJKjwR7o",
+    "lowestPool": "solana_J6nJRRM9pzsRTU3V3yVWZfN3Z84xSisUM1DAa4DMQ7K9",
+    "solNeededForProfit": 0.019177309303970658
+  },
+  {
+    "token": "9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump",
+    "highestPool": "solana_C9U2Ksk6KKWvLEeo5yUQ7Xu46X7NzeBJtd9PBfuXaUSM",
+    "lowestPool": "solana_HUGNqTa2qqkaAVsQmYzBorZfusMUY4ToHq99WKJY43Vb",
+    "solNeededForProfit": 0.0021062969865624373
+  },
+  {
+    "token": "EmBBhcqgm2acaXv9dXQFyDZDkhL4YMoWnGdHaMQJpump",
+    "highestPool": "solana_EHeanoVtGsWBiEe6ybazRTF14Y4jbVb1zL9G9WVMh2zq",
+    "lowestPool": "solana_BpzfUL3PDx5okDJuYgwTxGNaSS4FyF3dZxHC5YiExsQk",
+    "solNeededForProfit": 0.0037716287916564417
+  },
+  {
+    "token": "3MyaQBG7y3SHLQZa282Jh2xtB2TZKHGzNp1CuZ4Cpump",
+    "highestPool": "solana_23LUK4bPLCZ1Ey3FiETQLKP4k3iGVu4tLHxit7UZEhAm",
+    "lowestPool": "solana_96GfkEfLyDztn72GgtzHbTZS51uDriXW8D9TpSGXtNXt",
+    "solNeededForProfit": 0.015377043790963253
+  }
+]
