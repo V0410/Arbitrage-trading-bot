@@ -14,7 +14,7 @@
 
 1. Clone the repository:
     ```sh
-    git clone https://github.com/liam0413/arbitrage-trading-bot.git
+    git clone https://github.com/V0410/arbitrage-trading-bot.git
     cd arbitrage-trading-bot
     ```
 
